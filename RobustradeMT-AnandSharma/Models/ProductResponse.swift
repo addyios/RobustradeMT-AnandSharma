@@ -26,18 +26,18 @@ struct Product: Codable {
     let rating: Rating
 }
 
-struct Specs: Codable {
-    let color: String?
-    let weight: String?
-    let storage: String?
-    let battery: String?
-    let waterproof: Bool?
-    let screen: String?
-    let ram: String?
-    let capacity: String?
-    let output: String?
-    let connection: String?
-}
+//struct Specs: Codable {
+//    let color: String?
+//    let weight: String?
+//    let storage: String?
+//    let battery: String?
+//    let waterproof: Bool?
+//    let screen: String?
+//    let ram: String?
+//    let capacity: String?
+//    let output: String?
+//    let connection: String?
+//}
 
 struct Rating: Codable {
     let rate: Double

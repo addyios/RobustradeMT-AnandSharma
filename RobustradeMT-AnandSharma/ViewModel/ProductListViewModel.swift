@@ -64,10 +64,4 @@ final class ProductListViewModel {
             }
         }
     }
-    
-    //    func loadMoreIfNeeded(index: Int) {
-    //        if index == products.count - 2 && products.count < totalItems {
-    //            fetchProducts()
-    //        }
-    //    }
 }
