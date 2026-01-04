@@ -7,9 +7,6 @@
 
 import Foundation
 
-
-import Foundation
-
 protocol APIServiceProtocol {
     func fetchProducts(
         page: Int,

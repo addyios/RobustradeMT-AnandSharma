@@ -38,6 +38,7 @@ class ProductListViewController: UIViewController {
     }
 }
 
+//Mark: Table Delegate & Data source method calling
 extension ProductListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,6 +68,7 @@ extension ProductListViewController: UITableViewDataSource, UITableViewDelegate 
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
     func tableView(_ tableView: UITableView,
                    willDisplay cell: UITableViewCell,
                    forRowAt indexPath: IndexPath) {
@@ -81,6 +83,8 @@ extension ProductListViewController: UITableViewDataSource, UITableViewDelegate 
         return 126
     }
 }
+
+//Mark: Delegate method calling
 extension ProductListViewController: ProductListViewModelDelegate {
     
     func reloadData() {
@@ -92,13 +96,11 @@ extension ProductListViewController: ProductListViewModelDelegate {
     }
     
     func showError(_ error: NetworkError) {
-       
-               self.showAlert(
-                   message: error.message,
-                   retryHandler: { [weak self] in
-                       self?.viewModel.fetchProducts()
-                   }
-               )
-           
+        self.showAlert(
+            message: error.message,
+            retryHandler: { [weak self] in
+                self?.viewModel.fetchProducts()
+            }
+        )
     }
 }
